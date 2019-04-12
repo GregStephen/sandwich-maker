@@ -1,3 +1,12 @@
 body {
   background-color: aliceblue;
 }
+
+#finished-sandwich-div {
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 10%;
+  width: 75%;
+  height: 15em;
+  margin: auto;
+}
