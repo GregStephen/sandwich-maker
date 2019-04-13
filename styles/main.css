@@ -35,7 +35,10 @@ body {
   color: coral;
   text-shadow: 1px 1px 1px black;
   font-size: 2em;
-  margin-bottom: 2em;
+}
+
+#sammie-title-hr {
+  margin-bottom: 4em;
 }
 
 #bread-div {
@@ -81,9 +84,15 @@ body {
 }
 
 label {
-  margin-left: .5em;
+  text-align: start;
+  padding-left: .5em;
 }
 
+hr {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
 .menu-header {
   color: coral;
   font-size: 1.5em;
@@ -148,7 +157,6 @@ label {
                 6px -6px 0px black,
                 -6px 6px 0px black,
                 -6px -6px 0px black;
-
     border-radius: 5%;
   } 
 
@@ -160,7 +168,7 @@ label {
                 -6px 6px 0px black,
                 6px -6px 0px black,
                 -6px -6px 0px black;
-
+    width: 82.5%;
   }
 }
 
