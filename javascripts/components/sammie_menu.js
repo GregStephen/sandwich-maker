@@ -27,8 +27,18 @@ const makeMenu = () => {
   for (const [veggie, price] of veggieInfo) {
     veggieString += `<div class="menuCheckbox">`
     veggieString += `<input type="checkbox" name="veggie" id="${veggie}" value="${veggie}">`
-    veggieString += `<label for="${veggie}">${veggie}: $${price}</label>`
+    veggieString += `<label for="${veggie}">${veggie}: <span class="price-span">$${price}</span></label>`
     veggieString += `</div>`
+    //////// WHY DOESN'T THIS WORK ////////////
+    let priceSpans = document.getElementsByClassName("price-span");
+    console.log(priceSpans);
+    for (let i=0; i < priceSpans.length; i++) {
+      console.log("made it")
+      if (priceSpan.innerHTML === "$0"){
+      priceSpan.innerHTML = "No Charge"
+      }
+    }
+    ////////////////////////////////////////////
   };
   for (const [cheese, price] of cheeseInfo) {
     cheeseString += `<div class="menuCheckbox">`
