@@ -4,7 +4,7 @@ const veggie = {
   onion: 0,
   olives: 0,
   oregeno: 0,
-  mushrooms: 0,
+  mushrooms: 1,
 };
 
 const getVeggie = () => {

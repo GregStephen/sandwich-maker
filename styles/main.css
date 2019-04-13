@@ -1,3 +1,40 @@
 body {
   background-color: aliceblue;
 }
+
+#finished-sandwich-div {
+  background-color: white;
+  border: 2px solid black;
+  text-align: center;
+  border-radius: 10%;
+  padding: 2em;
+  width: 75%;
+  min-height: 15em;
+  margin: auto;
+}
+
+#sammie-title {
+  margin-bottom: 2em;
+}
+
+#bread-div {
+  margin-top: 1em;
+  margin-bottom: 3em;
+}
+
+.ingredient-div {
+  text-align: start;
+}
+
+.menu-checkboxes {
+  border: 1px solid black;
+  background-color: white;
+  text-align: center;
+  margin-top: 5em;
+  margin-bottom: 5em;
+}
+
+
+h6 {
+  text-decoration: underline;
+}
