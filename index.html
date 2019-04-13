@@ -38,14 +38,29 @@
     </div>
   </div>
 </div>
-  <div id="finished-sandwich-div">
-    <p>This is what you want on your sammie:</p>
-    <div id="filler-choice-div"></div>  
-    <div id="meat-choice-div"></div>  
-    <div id="cheese-choice-div"></div> 
-    <div id="veggie-choice-div"></div> 
-    <p>All served on freshly toasted:</p>  
-    <div id="bread-choice-div"></div>
+  <div id="finished-sandwich-div" class="container">
+    <h4 id="sammie-title">This is what you want on your sammie:</h4>
+    <div class="row">
+      <p class="col-1">meat:</p>
+      <div class="ingredient-div col-8 offset-1" id="meat-choice-div"></div> 
+    </div>  
+    <div class="row">
+      <p class="col-1">cheese:</p>
+      <div class="ingredient-div col-8 offset-1" id="cheese-choice-div"></div> 
+    </div>
+    <div class="row">
+      <p class="col-1" >veggies:</p>
+    <div class="ingredient-div col-8 offset-1" id="veggie-choice-div"></div> 
+    </div>
+    <div id="bread-div">
+      <h5>All served on freshly toasted:</h5>  
+      <div id="bread-choice-div"></div>
+    </div>
+    <div>
+      <h5>Your total price for this sandwich is</h5>
+      <div id="price-div"></div>
+      <h5>dollars!</h5>
+    </div>
   </div>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
