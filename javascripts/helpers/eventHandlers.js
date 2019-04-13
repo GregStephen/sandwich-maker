@@ -5,6 +5,7 @@ const meatCheckboxes = document.getElementsByName('meat');
 const veggieCheckboxes = document.getElementsByName('veggie');
 const cheeseCheckboxes = document.getElementsByName('cheese');
 const breadRadioBtns = document.getElementsByName('bread');
+const buyBtn = document.getElementById('buyBtn');
 let meatIngredientList = [];
 let veggieIngredientList = [];
 let cheeseIngredientList = [];
@@ -90,11 +91,25 @@ const radioChange = (e) => {
   util.printToDom('price-div', totalPrice);
 }
 
+////////////////////////////////////////////////////
+///////////////// BUY BUTTON EVENT //////////////////
+////////////////////////////////////////////////////
+
+const buyBtnFunction = () => {
+  // if(document.getElementById("bread-choice-div").innerHTML === ""){
+  //   alert("Please select a type of bread")
+  // } else {
+  let domString = '';
+  domString += `<p> $${totalPrice} has been charged to your account!</p>`
+  util.printToDom("thanksForBuyingMessage", domString);
+};
 
 ////////////////////////////////////////////////////
 ///////////////// ATTACHES EVENTS //////////////////
 ////////////////////////////////////////////////////
+
 const attachEvents = () => {
+  buyBtn.addEventListener('click', buyBtnFunction)
   for (const meatCheckbox of meatCheckboxes) {
     meatCheckbox.addEventListener('change', checkboxChange);
   }

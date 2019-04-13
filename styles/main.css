@@ -5,27 +5,36 @@ body {
 #body-title {
   margin-top: 3em;
   margin-bottom: 5em;
-  color:blue;
+  color:coral;
   text-align: center;
+  border-bottom: 1px solid black;
+  box-shadow: 0px 15px 15px coral;
 }
 
 #make-your-sammie {
   font-size: 3.5em;
   font-weight: bold;
+  font-family: 'Fascinate Inline', cursive;
+  text-shadow: 2px 2px 1px black;
+ 
 }
 
 #finished-sandwich-div {
   background-color: white;
-  border: 2px solid black;
+  border-top: 10px solid coral;
+  border-bottom: 10px solid coral;
   text-align: center;
-  border-radius: 10%;
   padding: 2em;
-  width: 75%;
   min-height: 15em;
   margin: auto;
+  margin-bottom: 3em;
 }
 
 #sammie-title {
+  font-family: 'Fascinate Inline', cursive;
+  color: coral;
+  text-shadow: 1px 1px 1px black;
+  font-size: 2em;
   margin-bottom: 2em;
 }
 
@@ -34,20 +43,128 @@ body {
   margin-bottom: 3em;
 }
 
+#bread-choice-div {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 1.5em;
+}
+
 .ingredient-div {
   text-align: start;
+  font-size: 1.5em;
+  font-family: 'Permanent Marker', cursive; 
+}
+
+#dollar-sign {
+  font-size: 2em;
+  color: black;
+  font-family: 'Permanent Marker', cursive;
+  margin-right: .25em;
+}
+
+#price-div {
+  display: inline-block;
+  font-size: 1.5em;
+  color: black;
+  font-family: 'Permanent Marker', cursive;
 }
 
 .menu-checkboxes {
-  border: 1px solid black;
+  border-bottom: 3px solid coral;
+  border-top: 3px solid coral;
   background-color: white;
+  font-family: 'Permanent Marker', cursive;
   text-align: center;
-  margin-bottom: 5em;
+  margin-bottom: 2em;
+  padding-top: 1em; 
+  padding-bottom: 1em;
+  font-size: 1.25em;
 }
 
 label {
   margin-left: .5em;
 }
-h6 {
+
+.menu-header {
+  color: coral;
+  font-size: 1.5em;
+  font-family: 'Fascinate Inline', cursive;
+  text-shadow: 1px 1px 1px black;
+}
+
+.ingredient-title {
+  color: coral;
+  font-size: 1.5em;
+  font-family: 'Fascinate Inline', cursive;
+  text-shadow: 1px 1px 1px black;
+}
+
+#buyBtn {
+  font-family: 'Fascinate Inline', cursive;
+  font-size: 1.5em;
+  color: coral;
+  text-shadow: 1px 1px 1px black;
+  letter-spacing: .25em;
+  border-color: coral;
+  border-width: .25em;
+  background-color: aliceblue;
+}
+
+#buyBtn:hover, #buyBtn:active, #buyBtn:focus {
+  border-color: black;
+  color: black;
+  background-color: coral;
+  text-shadow: 1px 1px 1px aliceblue;
+}
+
+.modal-content {
+  border: 10px solid black;
+  font-family: 'Fascinate Inline', cursive;
+  text-align: center;
+  font-size: 2em;
+}
+
+.modal-body {
+  background-color: coral;
+}
+
+.modal-header, .modal-footer {
+  background-color: aliceblue;
+}
+
+.modal-header {
   text-decoration: underline;
+}
+
+/*///////////////////////////////////////*/
+/*/////////// MEDIA QUERIES /////////////*/
+/*///////////////////////////////////////*/
+
+/* medium break on bootstrap */
+@media (min-width: 576px) {
+  .menu-checkboxes {
+    margin-bottom: 5em;
+    border: 3px solid coral;
+    box-shadow: 6px 6px 0px black,
+                6px -6px 0px black,
+                -6px 6px 0px black,
+                -6px -6px 0px black;
+
+    border-radius: 5%;
+  } 
+
+  #finished-sandwich-div {
+    background-color: white;
+    border: 2px solid coral;
+    border-radius: 5%;
+    box-shadow: 6px 6px 0px black,
+                -6px 6px 0px black,
+                6px -6px 0px black,
+                -6px -6px 0px black;
+
+  }
+}
+
+/* large break on bootstrap */
+@media (min-width: 768px){
+
 }

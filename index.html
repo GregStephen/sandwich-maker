@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Sammie Maker</title>
+  <link href="https://fonts.googleapis.com/css?family=Fascinate+Inline|Permanent+Marker" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="./styles/main.css">
 </head>
@@ -15,57 +16,86 @@
 
   <div class="container">
    <div id="menu-container" class="row justify-content-around">
-    <div class="menu-checkboxes col-5">
-      <h6>CHECK OUT OUR MEATS</h6>
+      <div class="menu-checkboxes col-12 col-md-5">
+        <h6 class="menu-header">CHOOSE YOUR BREAD</h6>
+        <div id="bread">
+  
+        </div>
+      </div>
+    <div class="menu-checkboxes col-12 col-md-5">
+      <h6 class="menu-header">CHOOSE YOUR MEATS</h6>
       <div id="meats">
 
       </div>
     </div>  
-    <div class="menu-checkboxes col-5">
-      <h6>CHECK OUT OUR CHEESES</h6>
+    <div class="menu-checkboxes col-12 col-md-5">
+      <h6 class="menu-header">CHOOSE YOUR CHEESES</h6>
       <div id="cheese">
 
       </div>
     </div>
-    <div class="menu-checkboxes col-5">
-      <h6>CHECK OUT OUR BREAD</h6>
-      <div id="bread">
-
-      </div>
-    </div>
-    <div class="menu-checkboxes col-5">
-      <h6>CHECK OUT OUR VEGGIES</h6>
+    <div class="menu-checkboxes col-12 col-md-5">
+      <h6 class="menu-header">CHOOSE YOUR VEGGIES</h6>
       <div id="veggies">
 
       </div>
     </div>
+  
+   
   </div>
 </div>
   <div id="finished-sandwich-div" class="container">
-    <h4 id="sammie-title">This is what you want on your sammie:</h4>
+    <h4 id="sammie-title">THIS IS WHAT YOU WANT ON YOUR SAMMIE:</h4>
     <div class="row">
-      <p class="col-1">Meat:</p>
-      <div class="ingredient-div col-8 offset-1" id="meat-choice-div"></div> 
+      <p class="ingredient-title col-4 col-md-2">MEAT:</p>
+      <div class="ingredient-div col-7 col-md-8 offset-md-1" id="meat-choice-div">NO MEAT?</div> 
     </div>  
     <div class="row">
-      <p class="col-1">Cheese:</p>
-      <div class="ingredient-div col-8 offset-1" id="cheese-choice-div"></div> 
+      <p class="ingredient-title col-4 col-md-2">CHEESE:</p>
+      <div class="ingredient-div col-7 col-md-8 offset-md-1" id="cheese-choice-div">NO CHEESE?</div> 
     </div>
     <div class="row">
-      <p class="col-1" >Veggies:</p>
-    <div class="ingredient-div col-8 offset-1" id="veggie-choice-div"></div> 
+      <p class="ingredient-title col-4 col-md-2" >VEGGIES:</p>
+    <div class="ingredient-div col-7 col-md-8 offset-md-1" id="veggie-choice-div">NO VEGGIES?</div> 
     </div>
     <div id="bread-div">
-      <h5>All served on freshly toasted:</h5>  
-      <div id="bread-choice-div"></div>
+      <h5 class="ingredient-title">ALL SERVED ON FRESH:</h5>  
+      <div id="bread-choice-div">LETTUCE WRAP?</div>
+    </div>
+    <div class="ingredient-title">
+      <h5>YOUR TOTAL PRICE IS :</h5>
+      <div>
+        <span id="dollar-sign">$</span><div id="price-div">0</div>
+      </div>
     </div>
     <div>
-      <h5>Your total price for this sandwich is</h5>
-      <div id="price-div"></div>
-      <h5>dollars!</h5>
+      <button data-toggle="modal" data-target="#thanksForBuyingModal" id="buyBtn" class="btn btn-outline-dark">BUY THIS SAMMIE</button>
     </div>
   </div>
 
+  <div class="modal fade" id="thanksForBuyingModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="thanksForBuyingModalLabel">THANKS FOR BUYING A SAMMIE</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div id="thanksForBuyingMessage" class="modal-body">
+  
+      </div>
+      <div class="modal-footer">
+        <button id="noWait" type="button" class="btn btn-danger" data-dismiss="modal">LET'S EAT!</button>
+       
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+  </div>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
