@@ -1,8 +1,4 @@
 import util from './util.js';
-import bread from '../components/bread.js';
-import meat from '../components/meat.js';
-import veggies from '../components/veggie.js';
-import cheese from '../components/cheese.js';
 import price from '../helpers/price.js'
 
 const meatCheckboxes = document.getElementsByName('meat');
@@ -12,74 +8,74 @@ const breadRadioBtns = document.getElementsByName('bread');
 let meatIngredientList = [];
 let veggieIngredientList = [];
 let cheeseIngredientList = [];
-// let ingredientList = [];
 let breadChoice = '';
 let breadPrice = 0;
 let totalPrice = 0;
 
-const checkboxChange = (e, type) => {
+
+////////////////////////////////////////////////////
+//////// FOR THE MEAT, VEGGIES, & CHEESES //////////
+////////////////////////////////////////////////////
+
+const checkboxChange = (e) => {
   let checkbox = e.target;
   let checkboxId = e.target.id;
+  let checkboxIdToPrint = ` ${e.target.id}`;
   let checkboxType = e.target.name;
   if (checkboxType === "meat"){
-    if (checkboxType === type){
-       let div = `${type}-choice-div`;
-      if (checkbox.checked) {
-        totalPrice += price.addMeat(checkboxId);
-        console.log(totalPrice);
-        meatIngredientList.push(checkboxId);
-        util.printToDom(div, meatIngredientList);
-        util.printToDom('price-div', totalPrice);
-      } else {
-        let index = meatIngredientList.indexOf(checkboxId);
-        if (index !== -1) {
-          meatIngredientList.splice(index, 1);
-        }
-        totalPrice -= price.addMeat(checkboxId)
-        util.printToDom(div, meatIngredientList);
-        util.printToDom('price-div', totalPrice);
+    let div = `${checkboxType}-choice-div`;
+    if (checkbox.checked) {
+      totalPrice += price.addMeat(checkboxId);
+      meatIngredientList.push(checkboxIdToPrint);
+      util.printToDom(div, meatIngredientList);
+      util.printToDom('price-div', totalPrice);
+    } else {
+      let index = meatIngredientList.indexOf(checkboxIdToPrint);
+      if (index !== -1) {
+        meatIngredientList.splice(index, 1);
       }
+      totalPrice -= price.addMeat(checkboxId)
+      util.printToDom(div, meatIngredientList);
+      util.printToDom('price-div', totalPrice);
     }
   } else if (checkboxType === "veggie"){
-    if (checkboxType === type){
-       let div = `${type}-choice-div`;
-      if (checkbox.checked) {
-        totalPrice += price.addVeggie(checkboxId);
-        console.log(totalPrice);
-        veggieIngredientList.push(checkboxId);
-        util.printToDom(div, veggieIngredientList);
-        util.printToDom('price-div', totalPrice);
-      } else {
-        let index = veggieIngredientList.indexOf(checkboxId);
-        if (index !== -1) {
-          veggieIngredientList.splice(index, 1);
-        }
-        totalPrice -= price.addVeggie(checkboxId)
-        util.printToDom(div, veggieIngredientList);
-        util.printToDom('price-div', totalPrice);
+    let div = `${checkboxType}-choice-div`;
+    if (checkbox.checked) {
+      totalPrice += price.addVeggie(checkboxId);
+      veggieIngredientList.push(checkboxIdToPrint);
+      util.printToDom(div, veggieIngredientList);
+      util.printToDom('price-div', totalPrice);
+    } else {
+      let index = veggieIngredientList.indexOf(checkboxIdToPrint);
+      if (index !== -1) {
+        veggieIngredientList.splice(index, 1);
       }
+      totalPrice -= price.addVeggie(checkboxId)
+      util.printToDom(div, veggieIngredientList);
+      util.printToDom('price-div', totalPrice);
     }
   } else if (checkboxType === "cheese"){
-    if (checkboxType === type){
-       let div = `${type}-choice-div`;
-      if (checkbox.checked) {
-        totalPrice += price.addCheese(checkboxId);
-        console.log(totalPrice);
-        cheeseIngredientList.push(checkboxId);
-        util.printToDom(div, cheeseIngredientList);
-        util.printToDom('price-div', totalPrice);
-      } else {
-        let index = cheeseIngredientList.indexOf(checkboxId);
-        if (index !== -1) {
-          cheeseIngredientList.splice(index, 1);
-        }
-        totalPrice -= price.addCheese(checkboxId)
-        util.printToDom(div, cheeseIngredientList);
-        util.printToDom('price-div', totalPrice);
+    let div = `${checkboxType}-choice-div`;
+    if (checkbox.checked) {
+      totalPrice += price.addCheese(checkboxId);
+      cheeseIngredientList.push(checkboxIdToPrint);
+      util.printToDom(div, cheeseIngredientList);
+      util.printToDom('price-div', totalPrice);
+    } else {
+      let index = cheeseIngredientList.indexOf(checkboxIdToPrint);
+      if (index !== -1) {
+        cheeseIngredientList.splice(index, 1);
       }
+      totalPrice -= price.addCheese(checkboxId)
+      util.printToDom(div, cheeseIngredientList);
+      util.printToDom('price-div', totalPrice);
     }
   }
 };
+
+////////////////////////////////////////////////////
+///////////////////// FOR THE BREAD ////////////////
+////////////////////////////////////////////////////
 
 const radioChange = (e) => {
   let radio = e.target;
@@ -94,15 +90,19 @@ const radioChange = (e) => {
   util.printToDom('price-div', totalPrice);
 }
 
+
+////////////////////////////////////////////////////
+///////////////// ATTACHES EVENTS //////////////////
+////////////////////////////////////////////////////
 const attachEvents = () => {
   for (const meatCheckbox of meatCheckboxes) {
-    meatCheckbox.addEventListener('change', (event) => { checkboxChange(event, "meat"); });
+    meatCheckbox.addEventListener('change', checkboxChange);
   }
   for (const veggieCheckbox of veggieCheckboxes) {
-    veggieCheckbox.addEventListener('change', (event) => { checkboxChange(event, "veggie"); });
+    veggieCheckbox.addEventListener('change', checkboxChange);
   }
   for (const cheeseCheckbox of cheeseCheckboxes) {
-    cheeseCheckbox.addEventListener('change', (event) => { checkboxChange(event, "cheese"); });
+    cheeseCheckbox.addEventListener('change', checkboxChange);
   }
   for (const breadRadioBtn of breadRadioBtns) {
     breadRadioBtn.addEventListener('change', radioChange);
